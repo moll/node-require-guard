@@ -1,5 +1,5 @@
-default:
-	@echo Pick a target, aim and fire!
+love:
+	@echo "Feel like makin' love."
 
 test:
 	@./node_modules/.bin/mocha --reporter dot
@@ -7,7 +7,5 @@ test:
 autotest:
 	@./node_modules/.bin/mocha --watch --reporter spec
 
-love:
-	@echo "Feel like makin' love."
 
-.PHONY: default test autotest love
+.PHONY: test autotest love
