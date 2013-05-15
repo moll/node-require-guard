@@ -8,7 +8,7 @@
 
 	"licenses" : [{
 		"type" : "LAGPL",
-		"url" : "https://github.com/moll/node-require-guard/LICENSE"
+		"url" : "https://github.com/moll/node-require-guard/blob/master/LICENSE"
   }],
 
 	"main": "index.js",
