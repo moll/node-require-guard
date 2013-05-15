@@ -45,7 +45,7 @@ describe("Guard", function() {
     })
 
     it("should throw when passing a non-existent module", function() {
-      Should.throw(function() { require("..")("mescalaro") })
+      Should.throw(function() { requireGuard()("mescalaro") })
     })
   })
 
@@ -60,7 +60,7 @@ describe("Guard", function() {
     })
 
     it("should throw when passing a non-existent path", function() {
-      Should.throw(function() { require("..")("./breakaway") })
+      Should.throw(function() { requireGuard()("./breakaway") })
     })
   })
 
