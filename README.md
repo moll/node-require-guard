@@ -5,6 +5,7 @@ Require Guard is a library for Node.js that **prevents** files from being requir
 When you find yourself **fighting code-reloaders** or **test runners** like Mocha to **stop reloading** your slow initialization code each cycle, and no one else can help, maybe you can hire the **Require Guard**.
 
 *"Hey, but doesn't Node.js' `require` itself not require files twice?"*
+
 Yes, but those pesky code-reloaders and test runners, for your own good, unload everything between [test] cycles to keep things fresh. For such cases Require Guard is the sliced bread beneath your toast. Run that external process or slow op once and not worry that it gets run again.
 
 
@@ -67,6 +68,7 @@ For more convoluted language, see the `LICENSE` file.
 Dossier
 -------
 **[Andri Möll](http://themoll.com)** typed this and the code.
+
 [Monday Calendar](http://mondayapp.com) supported the engineering work.
 
 If you find Require Guard has muscles that need improving, please type to me at andri@dot.ee or [create an issue on GitHub](https://github.com/moll/node-require-guard/issues).
