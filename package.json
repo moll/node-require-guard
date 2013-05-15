@@ -5,6 +5,7 @@
 
 	"author": "Andri Möll",
 	"email": "andri@dot.ee",
+	"bugs": "https://github.com/moll/node-require-guard/issues",
 
 	"licenses" : [{
 		"type" : "LAGPL",
