@@ -1,6 +1,7 @@
 {
 	"name": "require-guard",
 	"version": "0.0.0",
+	"description": "Protects against double loading a module. Great with auto-reloaders or test runners.",
 
 	"author": "Andri Möll",
 	"email": "andri@dot.ee",
