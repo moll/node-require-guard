@@ -5,6 +5,11 @@
 	"author": "Andri Möll",
 	"email": "andri@dot.ee",
 
+	"licenses" : [{
+		"type" : "LAGPL",
+		"url" : "https://github.com/moll/node-require-guard/LICENSE"
+  }],
+
 	"main": "index.js",
 
 	"scripts": {
