@@ -2,15 +2,21 @@
 	"name": "require-guard",
 	"version": "1.0.0",
 	"description": "Prevent files and modules being required more than once. Helps with auto-reloaders or test runners that insist.",
+	"homepage": "https://github.com/moll/node-require-guard",
 
 	"author": "Andri Möll",
 	"email": "andri@dot.ee",
 	"bugs": "https://github.com/moll/node-require-guard/issues",
 
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/moll/node-require-guard.git"
+	},
+
 	"licenses" : [{
 		"type" : "LAGPL",
 		"url" : "https://github.com/moll/node-require-guard/blob/master/LICENSE"
-  }],
+	}],
 
 	"main": "index.js",
 
