@@ -7,5 +7,4 @@ test:
 autotest:
 	@./node_modules/.bin/mocha --watch --reporter spec
 
-
 .PHONY: test autotest love
