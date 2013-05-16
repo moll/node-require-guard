@@ -1,6 +1,7 @@
 Require Guard for Node.js
 =========================
-[![Build Status](https://travis-ci.org/moll/node-require-guard.png)](https://travis-ci.org/moll/node-require-guard)
+[![NPM version](https://badge.fury.io/js/require-guard.png)](http://badge.fury.io/js/require-guard)
+[![Build status](https://travis-ci.org/moll/node-require-guard.png)](https://travis-ci.org/moll/node-require-guard)
 
 Require Guard is a library for Node.js that **prevents** files from being required and loaded **more than once**.
 
