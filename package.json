@@ -1,6 +1,6 @@
 {
 	"name": "require-guard",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Prevent files and modules being required more than once. Helps with auto-reloaders or test runners that insist.",
 	"keywords": ["require", "module", "reload", "test"],
 	"homepage": "https://github.com/moll/node-require-guard",

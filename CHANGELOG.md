@@ -1,4 +1,4 @@
-## Unreleased
+## 1.0.1 (Aug 9, 2013)
 - Publishes tests with Require Guard for people who run tests when installing.  
   No changes to Require Guard itself, though.
 
