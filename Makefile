@@ -10,4 +10,10 @@ spec:
 autotest:
 	@node $(NODE_OPTS) ./node_modules/.bin/mocha -R spec --watch $(MOCHA_OPTS)
 
-.PHONY: love test spec autotest
+pack:
+	npm pack
+
+publish:
+	npm publish
+
+.PHONY: love test spec autotest pack publish
