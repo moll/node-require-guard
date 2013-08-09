@@ -2,9 +2,12 @@ love:
 	@echo "Feel like makin' love."
 
 test:
-	@./node_modules/.bin/mocha --reporter dot $(MOCHA_OPTS)
+	@node $(NODE_OPTS) ./node_modules/.bin/mocha -R dot $(MOCHA_OPTS)
+
+spec: 
+	@node $(NODE_OPTS) ./node_modules/.bin/mocha -R spec $(MOCHA_OPTS)
 
 autotest:
-	@./node_modules/.bin/mocha --watch --reporter spec $(MOCHA_OPTS)
+	@node $(NODE_OPTS) ./node_modules/.bin/mocha -R spec --watch $(MOCHA_OPTS)
 
-.PHONY: love test autotest
+.PHONY: love test spec autotest
