@@ -70,6 +70,6 @@ For more convoluted language, see the `LICENSE` file.
 Dossier
 -------
 **[Andri Möll](http://themoll.com)** typed this and the code.  
-[Monday Calendar](http://mondayapp.com) supported the engineering work.
+[Monday Calendar](https://mondayapp.com) supported the engineering work.
 
 If you find Require Guard has muscles that need improving, please type to me at andri@dot.ee or [create an issue](https://github.com/moll/node-require-guard/issues).
