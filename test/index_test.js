@@ -1,108 +1,105 @@
 var Module = require("module")
-var Should = require("chai").should()
 
 describe("Guard", function() {
   function requireGuard() { return require("..") }
   resetModuleCache(require)
 
-  function itShouldLeaveParentConfigurable(name) {
-    it("should leave the parent (this) module configurable", function() {
+  function itMustLeaveParentConfigurable(name) {
+    it("must leave the parent (this) module configurable", function() {
       requireGuard()(name)
       var prop = Object.getOwnPropertyDescriptor(require.cache, module.id)
-      prop.configurable.should.be.true
+      prop.configurable.must.be.true()
     })
   }
 
-  function shouldSetNonConfigurable(name) {
+  function mustSetNonConfigurable(name) {
     var path = require.resolve(name)
     var prop = Object.getOwnPropertyDescriptor(require.cache, path)
-    prop.configurable.should.be.false
+    prop.configurable.must.be.false()
   }
 
-  //
-  it("should, with irony, remove itself from cache after loading", function() {
+  it("must, with irony, remove itself from cache after loading", function() {
     requireGuard()
-    require.cache.should.not.have.key(require.resolve(".."))
+    require.cache.must.not.have.property(require.resolve(".."))
   })
 
-  //
   describe("given nothing", function() {
-    it("should set the parent (this) module non-configurable", function() {
+    it("must set the parent (this) module non-configurable", function() {
       requireGuard()()
       var prop = Object.getOwnPropertyDescriptor(require.cache, module.id)
-      prop.configurable.should.be.false
+      prop.configurable.must.be.false()
     })
   })
 
-  //
   describe("given a module name", function() {
-    var name = "chai"
-    itShouldLeaveParentConfigurable(name)
+    var name = "mocha"
+    itMustLeaveParentConfigurable(name)
 
-    it("should set the given module non-configurable", function() {
+    it("must set the given module non-configurable", function() {
       requireGuard()(name)
-      shouldSetNonConfigurable(name)
+      mustSetNonConfigurable(name)
     })
 
-    it("should throw when passing a non-existent module", function() {
-      Should.throw(function() { requireGuard()("mescalaro") })
+    it("must throw when passing a non-existent module", function() {
+			var err
+			try { requireGuard()("mescalaro") } catch (ex) { err = ex }
+			err.must.be.an.error()
     })
   })
 
-  //
   describe("given a relative module path", function() {
-    var name = "../node_modules/chai/lib/chai.js"
-    itShouldLeaveParentConfigurable(name)
+    var name = "../node_modules/mocha/lib/utils.js"
+    itMustLeaveParentConfigurable(name)
 
-    it("should set the given module non-configurable", function() {
+    it("must set the given module non-configurable", function() {
       requireGuard()(name)
-      shouldSetNonConfigurable(name)
+      mustSetNonConfigurable(name)
     })
 
-    it("should throw when passing a non-existent path", function() {
-      Should.throw(function() { requireGuard()("./breakaway") })
+    it("must throw when passing a non-existent path", function() {
+			var err
+			try { requireGuard()("./breakaway") } catch (ex) { err = ex }
+			err.must.be.an.error()
     })
   })
 
-  //
   describe("given an array of module names", function() {
-    var names = ["chai", "../node_modules/mocha/lib/utils.js"]
-    itShouldLeaveParentConfigurable(names)
+    var names = ["mocha", "../node_modules/mocha/lib/utils.js"]
+    itMustLeaveParentConfigurable(names)
 
-    it("should set the given modules non-configurable", function() {
+    it("must set the given modules non-configurable", function() {
       requireGuard()(names)
-      names.forEach(shouldSetNonConfigurable)
+      names.forEach(mustSetNonConfigurable)
     })
   })
 
-  //
   describe("after guarding", function() {
-    it("should set the modules undeletable", function() {
-      requireGuard()("chai")
-      var path = require.resolve("chai")
+    it("must set the modules undeletable", function() {
+      requireGuard()("mocha")
+      var path = require.resolve("mocha")
       delete require.cache[path]
-      Should.exist(require.cache[path])
+      require.cache[path].must.exist()
     })
 
-    it("should leave the modules enumerable", function() {
-      requireGuard()("chai")
-      var path = require.resolve("chai")
+    it("must leave the modules enumerable", function() {
+      requireGuard()("mocha")
+      var path = require.resolve("mocha")
       var prop = Object.getOwnPropertyDescriptor(require.cache, path)
-      prop.enumerable.should.be.true
+      prop.enumerable.must.be.true()
     })
 
-    it("should leave the modules writable", function() {
-      requireGuard()("chai")
-      var path = require.resolve("chai")
+    it("must leave the modules writable", function() {
+      requireGuard()("mocha")
+      var path = require.resolve("mocha")
       var prop = Object.getOwnPropertyDescriptor(require.cache, path)
-      prop.writable.should.be.true
+      prop.writable.must.be.true()
     })
 
-    it("should leave the modules with a working setter", function() {
-      requireGuard()("chai")
-      var path = require.resolve("chai")
+    it("must leave the modules with a working setter", function() {
+      requireGuard()("mocha")
+      var path = require.resolve("mocha")
       require.cache[path] = "Breakaway: Chemical Attraction"
-      require.cache[path].should.equal("Breakaway: Chemical Attraction")
+      require.cache[path].must.equal("Breakaway: Chemical Attraction")
     })
   })
 })
