@@ -1,7 +1,7 @@
 Require Guard for Node.js
 =========================
-[![NPM version](https://badge.fury.io/js/require-guard.png)](http://badge.fury.io/js/require-guard)
-[![Build status](https://travis-ci.org/moll/node-require-guard.png)](https://travis-ci.org/moll/node-require-guard)
+[![NPM version][npm-badge]](https://www.npmjs.com/package/require-guard)
+[![Build status][travis-badge]](https://travis-ci.org/moll/node-require-guard)
 
 Require Guard is a library for Node.js that **prevents** files from being required and loaded **more than once**.
 
@@ -9,6 +9,9 @@ When you find yourself **fighting code-reloaders** or **test runners** like Moch
 
 *"Hey, but doesn't Node.js' `require` itself not require files twice?"*  
 Yes, but those pesky code-reloaders and test runners, for your own good, unload everything between [test] cycles to keep things fresh. For such cases Require Guard is the sliced bread beneath your toast. Run that external process or slow op once and not worry that it gets run again.
+
+[npm-badge]: https://img.shields.io/npm/v/require-guard.svg
+[travis-badge]: https://travis-ci.org/moll/node-require-guard.svg?branch=master
 
 
 Using the Guard
