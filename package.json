@@ -27,6 +27,6 @@
 
 	"devDependencies": {
 		"mocha": "1.9.0",
-		"must": "^0.13.4"
+		"must": ">= 0.13.4 < 0.14"
 	}
 }
